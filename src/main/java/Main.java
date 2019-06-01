@@ -11,7 +11,9 @@ public class Main {
 //        poeticDuke.perform();
 
         Performer keny = (Performer) applicationContext.getBean("keny");
-        keny.perform();
+//        keny.perform();
 
+        Performer kenyPianist = (Performer) applicationContext.getBean("kenyPianist");
+        kenyPianist.perform();
     }
 }
