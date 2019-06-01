@@ -14,6 +14,9 @@ public class Main {
 //        keny.perform();
 
         Performer kenyPianist = (Performer) applicationContext.getBean("kenyPianist");
-        kenyPianist.perform();
+//        kenyPianist.perform();
+
+        Performer hank = (Performer) applicationContext.getBean("hank");
+        hank.perform();
     }
 }

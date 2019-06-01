@@ -28,4 +28,17 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
     <bean id="kenyPianist" class="Instrumentalist"
           p:song="Hey Jude"
           p:instrument-ref="piano"/>
+
+    <bean id="guitar" class="Guitar"/>
+
+    <bean id="hank" class="OneManBand">
+        <property name="instruments">
+            <map>
+                <entry key="G" value-ref="guitar"/>
+                <entry key="P" value-ref="piano"/>
+                <entry key="S" value-ref="saxaphone"/>
+            </map>
+        </property>
+    </bean>
+
 </beans>
