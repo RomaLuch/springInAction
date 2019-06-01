@@ -3,6 +3,19 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <bean id="duke" class="Juggler"/>
+    <bean id="duke" class="Juggler">
+        <constructor-arg value="15"/>
+    </bean>
+
+    <bean id="sonet29" class="Sonet29"/>
+
+    <bean id="poeticDuke" class="PoeticJuggler">
+        <constructor-arg value="15"/>
+        <constructor-arg ref="sonet29"/>
+    </bean>
+
+
+
+
 
 </beans>
