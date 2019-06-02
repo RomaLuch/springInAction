@@ -1,3 +1,5 @@
+package instruments;
+
 public class Saxaphone implements Instrument {
 
     public Saxaphone() {

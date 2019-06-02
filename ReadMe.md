@@ -52,3 +52,26 @@
 
 2. Связывание через анатацию @Autowire
 Если id бина совпадает с именем поля, то не нужен @Qualifier
+
+3. Поиск компонентов context:component-scan можно настраивать,
+используя любой из пяти типов фильтров
+    ```xml
+        <context:component-scan base-package="instruments">
+            <context:include-filter type="assignable" expression="instruments.Instrument"/>
+            <context:exclude-filter type="assignable" expression="instruments.Piano"/>
+            <context:exclude-filter type="assignable" expression="instruments.Guitar"/>
+        </context:component-scan>
+    
+    ```
+    * annotation - Отыскивает классы, отмеченные указанной аннотацией
+на уровне типа. Аннотация определяется атрибутом expression
+    * assignable - Отыскивает классы, экземпляры которого могут присваиваться
+свойствам указанного типа. Тип свойств определяется
+атрибутом expression
+    * aspectj - Отыскивает классы, тип которых соответствует выражению
+типа AspectJ, указанному в атрибуте expression
+    * custom - Использует пользовательскую реализацию org.springframework.
+core.type.TypeFilter, указанную в атрибуте expression
+    * regex - Отыскивает классы, имена которых соответствуют регулярному
+выражению, указанному в атрибуте expression
+

@@ -1,4 +1,7 @@
-import java.util.Collection;
+package performers;
+
+import instruments.Instrument;
+
 import java.util.Map;
 
 public class OneManBand implements Performer {

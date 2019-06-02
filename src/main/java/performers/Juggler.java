@@ -1,3 +1,5 @@
+package performers;
+
 public class Juggler implements Performer {
 
     private int beanBags = 3;

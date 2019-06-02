@@ -5,33 +5,33 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <bean id="duke" class="Juggler">
+    <bean id="duke" class="performers.Juggler">
         <constructor-arg value="15"/>
     </bean>
 
-    <bean id="sonet29" class="Sonet29"/>
+    <bean id="sonet29" class="poems.Sonet29"/>
 
-    <bean id="poeticDuke" class="PoeticJuggler">
+    <bean id="poeticDuke" class="performers.PoeticJuggler">
         <constructor-arg value="15"/>
         <constructor-arg ref="sonet29"/>
     </bean>
 
-    <bean id="saxaphone" class="Saxaphone"/>
+    <bean id="saxaphone" class="instruments.Saxaphone"/>
 
-    <bean id="piano" class="Piano"/>
+    <bean id="piano" class="instruments.Piano"/>
 
-    <bean id="keny" class="Instrumentalist">
+    <bean id="keny" class="performers.Instrumentalist">
         <property name="song" value="Let it Be"/>
         <property name="instrument" ref="saxaphone"/>
     </bean>
 
-    <bean id="kenyPianist" class="Instrumentalist"
+    <bean id="kenyPianist" class="performers.Instrumentalist"
           p:song="Hey Jude"
           p:instrument-ref="piano"/>
 
-    <bean id="guitar" class="Guitar"/>
+    <bean id="guitar" class="instruments.Guitar"/>
 
-    <bean id="hank" class="OneManBand">
+    <bean id="hank" class="performers.OneManBand">
         <property name="instruments">
             <map>
                 <entry key="G" value-ref="guitar"/>

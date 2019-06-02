@@ -1,3 +1,7 @@
+package performers;
+
+import poems.Poem;
+
 public class PoeticJuggler extends Juggler {
 
     private Poem poem;

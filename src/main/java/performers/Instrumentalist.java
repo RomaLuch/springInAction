@@ -1,6 +1,10 @@
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+package performers;
 
+import instruments.Instrument;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component("eddie")
 public class Instrumentalist implements Performer {
 
     public void perform() {
@@ -24,8 +28,7 @@ public class Instrumentalist implements Performer {
 
     private Instrument instrument;
 
-    @Autowired(required = false)
-    @Qualifier("guitar")
+    @Autowired
     public void setInstrument(Instrument instrument) {
         this.instrument = instrument;
     }

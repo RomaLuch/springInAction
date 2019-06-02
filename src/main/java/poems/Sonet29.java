@@ -1,3 +1,5 @@
+package poems;
+
 public class Sonet29 implements Poem {
 
     private static String[] LINES = {

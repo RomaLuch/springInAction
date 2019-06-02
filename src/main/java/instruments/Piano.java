@@ -1,3 +1,5 @@
+package instruments;
+
 public class Piano implements Instrument {
 
     public Piano() {
