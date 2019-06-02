@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="instrument" class="Saxaphone"/>
+
+    <bean id="kenyAutowireByName" class="Instrumentalist"
+          autowire="byName">
+        <property name="song" value="Let it Be"/>
+    </bean>
+
+    <bean id="kenyAutowireByType" class="Instrumentalist"
+          autowire="byType">
+        <property name="song" value="Let it Be"/>
+    </bean>
+
+    <bean id="sonet29" class="Sonet29"/>
+
+    <bean id="duke" class="PoeticJuggler">
+        <constructor-arg value="15"/>
+        <constructor-arg ref="sonet29"/>
+    </bean>
+
+    <bean id="dukeAutowireConsructor"
+          class="PoeticJuggler"
+          autowire="constructor"/>
+
+</beans>
