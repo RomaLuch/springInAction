@@ -13,22 +13,7 @@
 
     <context:component-scan base-package="performers"/>
     <context:component-scan base-package="instruments"/>
+    <aop:aspectj-autoproxy/>
 
-    <bean id="magician" class="performers.Magician"/>
-    <bean id="volunteer" class="performers.Volunteer"/>
-
-    <aop:config>
-        <aop:aspect ref="magician">
-            <aop:pointcut
-                    id="thinking"
-                    expression="execution(*
-performers.Thinker.thinkOfSomething(String))
-and args(thoughts)"/>
-            <aop:before
-                    pointcut-ref="thinking"
-                    method="interceptThoughts"
-                    arg-names="thoughts"/>
-        </aop:aspect>
-    </aop:config>
-
+    <bean id="audience" class="aop.Audience"/>
 </beans>
