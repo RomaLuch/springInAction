@@ -2,6 +2,7 @@ package performers;
 
 import instruments.Instrument;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component("eddie")
@@ -15,12 +16,12 @@ public class Instrumentalist implements Performer {
     public Instrumentalist() {
     }
 
-    @Autowired
     public Instrumentalist(String song, Instrument instrument) {
         this.song = song;
         this.instrument = instrument;
     }
 
+    @Value("Let it Be")
     private String song;
 
     public void setSong(String song) {
@@ -35,6 +36,7 @@ public class Instrumentalist implements Performer {
         return song;
     }
 
+    @Autowired
     private Instrument instrument;
 
     public void setInstrument(Instrument instrument) {

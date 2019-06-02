@@ -75,3 +75,23 @@ core.type.TypeFilter, указанную в атрибуте expression
     * regex - Отыскивает классы, имена которых соответствуют регулярному
 выражению, указанному в атрибуте expression
 
+#### Глава 5
+
+> Прежде чем начинать делать примеры нужно подключить зависимости
+
+```xml
+        <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjrt -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>1.9.4</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.9.4</version>
+        </dependency>
+```
+
