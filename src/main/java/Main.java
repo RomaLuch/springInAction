@@ -9,8 +9,10 @@ public class Main {
         ApplicationContext context = new AnnotationConfigApplicationContext("configuration");
         Performer duke = (Performer) context.getBean("duke");
         Performer keny = (Performer) context.getBean("kenny");
+        Performer keny1 = (Performer) context.getBean("kenny1");
         duke.perform();
         keny.perform();
+        keny1.perform();
 
     }
 }

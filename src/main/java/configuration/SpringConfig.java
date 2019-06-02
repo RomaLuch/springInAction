@@ -2,6 +2,7 @@ package configuration;
 
 import instruments.Guitar;
 import instruments.Instrument;
+import instruments.Piano;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import performers.Instrumentalist;
@@ -22,11 +23,21 @@ public class SpringConfig {
     }
 
     @Bean
+    public Instrument piano() {
+        return new Piano();
+    }
+
+    @Bean
     public Performer kenny() {
-        Instrumentalist kenny = new Instrumentalist();
-        kenny.setSong("Jingle Bells");
-        kenny.setInstrument(guitar());
-        return kenny;
+        return new Instrumentalist("Jingle Bells", guitar());
+    }
+
+    @Bean
+    public Performer kenny1() {
+        Instrumentalist kenny1 = new Instrumentalist();
+        kenny1.setSong("Let It Be");
+        kenny1.setInstrument(piano());
+        return kenny1;
     }
 
 }

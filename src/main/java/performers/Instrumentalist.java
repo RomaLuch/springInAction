@@ -12,6 +12,15 @@ public class Instrumentalist implements Performer {
         instrument.play();
     }
 
+    public Instrumentalist() {
+    }
+
+    @Autowired
+    public Instrumentalist(String song, Instrument instrument) {
+        this.song = song;
+        this.instrument = instrument;
+    }
+
     private String song;
 
     public void setSong(String song) {
@@ -28,7 +37,6 @@ public class Instrumentalist implements Performer {
 
     private Instrument instrument;
 
-    @Autowired
     public void setInstrument(Instrument instrument) {
         this.instrument = instrument;
     }
