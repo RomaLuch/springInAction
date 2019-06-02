@@ -21,24 +21,9 @@
         <aop:aspect ref="audience">
 
             <aop:pointcut id="performance" expression="execution(* performers.Performer.perform(..))"/>
-
-            <!-- Ссылка на компонент audience -->
-            <aop:before
+            <aop:around
                     pointcut-ref="performance"
-                    method="takeSeats"/>
-            <!-- Перед выступлением -->
-            <aop:before
-                    pointcut-ref="performance"
-                    method="turnOffCellPhones"/>
-            <!-- Перед выступлением -->
-            <aop:after-returning
-                    pointcut-ref="performance"
-                    method="applaud"/>
-            <!-- После выступления -->
-            <aop:after-throwing
-                    pointcut-ref="performance"
-                    method="demandRefund"/>
-            <!-- После неудачного выступления -->
+                    method="watchPerformance"/>
         </aop:aspect>
     </aop:config>
 
