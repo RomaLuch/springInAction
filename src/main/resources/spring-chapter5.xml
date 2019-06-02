@@ -14,16 +14,20 @@
     <context:component-scan base-package="performers"/>
     <context:component-scan base-package="instruments"/>
 
-    <bean id="audience"
-          class="aop.Audience"/>
+    <bean id="magician" class="performers.Magician"/>
+    <bean id="volunteer" class="performers.Volunteer"/>
 
     <aop:config>
-        <aop:aspect ref="audience">
-
-            <aop:pointcut id="performance" expression="execution(* performers.Performer.perform(..))"/>
-            <aop:around
-                    pointcut-ref="performance"
-                    method="watchPerformance"/>
+        <aop:aspect ref="magician">
+            <aop:pointcut
+                    id="thinking"
+                    expression="execution(*
+performers.Thinker.thinkOfSomething(String))
+and args(thoughts)"/>
+            <aop:before
+                    pointcut-ref="thinking"
+                    method="interceptThoughts"
+                    arg-names="thoughts"/>
         </aop:aspect>
     </aop:config>
 
